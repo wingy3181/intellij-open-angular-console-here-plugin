@@ -1,0 +1,56 @@
+<idea-plugin>
+    <id>com.wingcheongyip.angular-console-plugin</id>
+    <name>Open Angular Console Here</name>
+    <vendor email="wingy3181@gmail.com" url="https://github.com/wingy3181/intellij-open-angular-console-here-plugin">wingy3181</vendor>
+
+    <description><![CDATA[
+      An IntelliJ plugin for opening current directory in Angular Console.<br>
+      Source code: https://github.com/wingy3181/intellij-open-angular-console-here-plugin
+      <br>
+      <br>
+      <br>
+      ## Usage<br>
+        Right click on target file or directory in Project view, then select Open Angular Console Here.<br><br>
+      ## Compatibility<br>
+        Mac and Win platforms are supported temporarily.<br><br>
+      ## Shortcut Key<br>
+        * Mac: option + A<br>
+        * Win: alt + A<br>
+    ]]></description>
+
+    <change-notes><![CDATA[
+      <ul>
+       <li>31/03/2019 v1.0 Initial version of intellij-open-angular-console-here-plugin.</li>
+      </ul>
+    ]]>
+    </change-notes>
+
+    <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+    <idea-version since-build="191"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <project-components>
+        <!-- Add your project components here -->
+    </project-components>
+
+    <actions>
+        <action id="com.wingcheongyip.action.OpenAngularConsoleHereAction"
+                class="com.wingcheongyip.action.OpenAngularConsoleHereAction"
+                text="Open Angular Console Here"
+                icon="icons/angular-console-16x16.png"
+                description="Open Angular Console Here">
+            <add-to-group group-id="RevealGroup" anchor="after" relative-to-action="RevealIn"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="alt A"/>
+        </action>
+    </actions>
+</idea-plugin>
